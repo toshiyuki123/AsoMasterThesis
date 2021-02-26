@@ -39,6 +39,8 @@ jupyter notebookで学習（.ipynb）
 
 
 ## テスト
+保存したものを用いてテストをする．
+例えば，〜を用いたものだと次のように動かす．
 ``` 
   python test.py
 ```
