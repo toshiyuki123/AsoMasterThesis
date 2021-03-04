@@ -19,7 +19,7 @@
 車を走行させることで前方路面画像と加速度データを取得する．
 
 走行データのrosbagであるsample.bagは[ここ](https://drive.google.com/file/d/1lz41GKLA7QK_-HqEfRZSUWDEu1NEkdab/view?usp=sharing)からダウンロード．<br>
-（前方画像データは，”/camera/color/image_raw”のトピック，加速度データは，”/camera/accel/sample”のトピック）
+（前方画像データは，”/camera/color/image_raw”のトピック，加速度データは，”/camera/accel/sample”のトピック）．<br>
 これを用いて以下の3ステップ（データ前処理，学習，テスト）を説明する．
 
 ## データ前処理
