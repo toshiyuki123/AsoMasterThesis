@@ -1,14 +1,17 @@
 # AsoMasterThesis
 
 自分の研究では画像から中間層を介して振動を出力するような学習モデルを生成する．<br>
-そして，その中間層を用いることで路面を分類しようとするものである．
+そして，その中間層を用いることで路面を分類しようとするものである．<br>
+
+研究をする際に以下の4ステップが必要となる．
 
 * データ収集
 * データ前処理
 * 学習
 * テスト
 
-以下ではそれぞれのステップについて説明する．
+それぞれのステップについて説明する．
+
 
 ## データ収集
 
@@ -17,9 +20,7 @@
 
 走行データのrosbagであるsample.bagは[ここ](https://drive.google.com/file/d/1lz41GKLA7QK_-HqEfRZSUWDEu1NEkdab/view?usp=sharing)からダウンロード．<br>
 （前方画像データは，”/camera/color/image_raw”のトピック，加速度データは，”/camera/accel/sample”のトピック）
-
-
-
+これを用いて以下の3ステップ（データ前処理，学習，テスト）を説明する．
 
 ## データ前処理
 
@@ -29,13 +30,13 @@
 csv_saver.pyでrosbagを起動することで，時間と加速度の情報をcsv/acc.csvに保存
 ``` 
   python csv_saver.py
-  rosbag play XXXX.bag
+  rosbag play sample.bag
 ```
 
 csv2data.pyでrosbagを起動させることで，csvからdata/img下に画像，data/spec下にスペクトログラムを保存
 ``` 
   python csv2data.py
-  rosbag play XXXX.bag
+  rosbag play sample.bag
 ```
 
 ## 学習
