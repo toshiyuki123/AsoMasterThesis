@@ -29,13 +29,13 @@ sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック
 
 `scripts/csv_saver.py`でrosbagを起動することで，時間と加速度の情報を`csv/acc.csv`に保存
 ``` 
-  python python/csv_saver.py
+  python scripts/csv_saver.py
   rosbag play sample.bag
 ```
 
 `scripts/csv2data2.py`でrosbagを起動させることで，csvから`data/img`下に画像，`data/spec`下にスペクトログラムを保存
 ``` 
-  python python/csv2data2.py
+  python scripts/csv2data2.py
   rosbag play sample.bag
 ```
 
