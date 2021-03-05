@@ -18,7 +18,7 @@
 データ収集では，前方路面画像と振動情報を取得するrealsenseD435iを車載前方に搭載する．<br>
 車を走行させることで前方路面画像と加速度データを取得する．
 
-走行データのrosbagであるsample.bagは[ここ](https://drive.google.com/file/d/1lz41GKLA7QK_-HqEfRZSUWDEu1NEkdab/view?usp=sharing)からダウンロード．<br>
+走行データのrosbagである`sample.bag`は[ここ](https://drive.google.com/file/d/1lz41GKLA7QK_-HqEfRZSUWDEu1NEkdab/view?usp=sharing)からダウンロード．<br>
 sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック，加速度は`/camera/accel/sample`のトピックである．<br>
 これを用いて以下の3ステップ（データ前処理，学習，テスト）を説明する．
 
