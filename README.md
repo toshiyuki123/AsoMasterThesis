@@ -19,7 +19,7 @@
 車を走行させることで前方路面画像と加速度データを取得する．
 
 走行データのrosbagであるsample.bagは[ここ](https://drive.google.com/file/d/1lz41GKLA7QK_-HqEfRZSUWDEu1NEkdab/view?usp=sharing)からダウンロード．<br>
-sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック，加速度は”/camera/accel/sample”のトピックである．<br>
+sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック，加速度は`/camera/accel/sample`のトピックである．<br>
 これを用いて以下の3ステップ（データ前処理，学習，テスト）を説明する．
 
 ## データ前処理
@@ -27,13 +27,13 @@ sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック
 このステップでは，学習モデルの入力と出力のペア（入力画像，出力振動）を生成する．<br>
 振動に関しては，512点の加速度情報をFFT（フーリエ変換）したものを用いる．
 
-scripts/csv_saver.pyでrosbagを起動することで，時間と加速度の情報をcsv/acc.csvに保存
+`scripts/csv_saver.py`でrosbagを起動することで，時間と加速度の情報を`csv/acc.csv`に保存
 ``` 
   python python/csv_saver.py
   rosbag play sample.bag
 ```
 
-scripts/csv2data2.pyでrosbagを起動させることで，csvからdata/img下に画像，data/spec下にスペクトログラムを保存
+`scripts/csv2data2.py`でrosbagを起動させることで，csvから`data/img`下に画像，`data/spec`下にスペクトログラムを保存
 ``` 
   python python/csv2data2.py
   rosbag play sample.bag
@@ -53,4 +53,4 @@ jupyter notebookで編集して学習
   python scripts/restore_model_color_training_0.8.py
 ```
 
-上では，20201119_22:40.modelを用いているが，自分の学習したものを用いたいときは，jupyter/model/に追加しコードを修正．
+上では，`20201119_22:40.model`を用いているが，自分の学習したものを用いたいときは，`jupyter/model/`にモデルを追加しコードを修正．
