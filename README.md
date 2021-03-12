@@ -72,14 +72,14 @@ In this step, the input and output pairs (input image, output vibration) of the 
 For the vibration, we use the FFT (Fourier Transform) of the acceleration information of 512 points.<br>
 
 `scripts/csv_saver.py`でrosbagを起動することで，時間と加速度の情報を`csv/acc.csv`に保存.<br>
-Save time and acceleration information in `csv/acc.csv` by running rosbag in `scripts/csv_saver.py`.
+Save time and acceleration information in `csv/acc.csv` by running rosbag in `scripts/csv_saver.py`.<br>
 ``` 
   python scripts/csv_saver.py
   rosbag play sample.bag
 ```
 
-`scripts/csv2data2.py`でrosbagを起動させることで，csvから`data/img`下に画像，`data/spec`下にスペクトログラムを保存.
-Save images from csv under `data/img` and spectrograms under `data/spec` by rosbag in `scripts/csv2data2.py`.
+`scripts/csv2data2.py`でrosbagを起動させることで，csvから`data/img`下に画像，`data/spec`下にスペクトログラムを保存.<br>
+Save images from csv under `data/img` and spectrograms under `data/spec` by rosbag in `scripts/csv2data2.py`.<br>
 
 ``` 
   python scripts/csv2data2.py
