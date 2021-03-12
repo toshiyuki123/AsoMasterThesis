@@ -3,7 +3,7 @@
 自分の研究では画像から中間層を介して振動を出力するような学習モデルを生成する．<br>
 そして，その中間層を用いることで路面を分類しようとするものである．<br>
 
-研究をする際に以下の4ステップが必要となる．
+以下の5ステップを説明する．
 
 * 試しに最終形を動かす
 * データ収集
@@ -13,7 +13,20 @@
 
 それぞれのステップについて説明する．
 
-## 試しに最終形を動かす
+In my research, I generate a learning model that outputs vibrations from images through an intermediate layer.
+Then, I classify the road surface by using the intermediate layer.
+
+The following 5 steps will be explained.
+
+* Run the final model on a trial basis
+* Data collection
+* Data preprocessing
+* Train
+* Test
+
+Each of these steps will be explained.
+
+## 試しに最終形を動かす（Run the final model on a trial basis）
 
 試しに最終形を動かしてみる．<br>
 ``` 
@@ -24,7 +37,7 @@
 <image src="pictures/display_test.png" width=70%>
 
 
-## データ収集
+## データ収集（Data collection）
 
 データ収集では，前方路面画像と振動情報を取得するrealsenseD435iを車載前方に搭載する．<br>
 車を走行させることで前方路面画像と加速度データを取得する．
@@ -33,7 +46,7 @@
 sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック，加速度は`/camera/accel/sample`のトピックである．<br>
 これを用いて以下の3ステップ（データ前処理，学習，テスト）を説明する．
 
-## データ前処理
+## データ前処理（Data preprocessing）
 
 このステップでは，学習モデルの入力と出力のペア（入力画像，出力振動）を生成．<br>
 振動に関しては，512点の加速度情報をFFT（フーリエ変換）したものを利用．
@@ -50,7 +63,7 @@ sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック
   rosbag play sample.bag
 ```
 
-## 学習
+## 学習（Train）
 
 jupyter notebookで編集して学習．
 必要なものをインストール．<br>
@@ -62,10 +75,9 @@ pip install tensorflow
 ```
 
 
-## テスト
+## テスト（Test）
 保存したモデルを用いてテストをする．
+下のスクリプトの`20201119_22:40.model`を自分のモデルに置換する．
 ``` 
   python scripts/restore_model_color_training_0.8.py
 ```
-
-上では，`20201119_22:40.model`を用いているが，自分の学習したものを用いたいときは，`jupyter/model/`にモデルを追加しコードを修正．
