@@ -5,6 +5,7 @@
 
 研究をする際に以下の4ステップが必要となる．
 
+* 試しにさいしゅうけいを
 * データ収集
 * データ前処理
 * 学習
@@ -19,6 +20,7 @@
   python scripts/restore_model_color_training_0.8.py
 ```
 このとき，このように表示される．
+3行あり，一行目は，推論時の計測値と予測値，二行目は3つの潜在変数，三行目は前方路面画像である．
 <image src="pictures/display_test.png" width=70%>
 
 
@@ -33,8 +35,8 @@ sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック
 
 ## データ前処理
 
-このステップでは，学習モデルの入力と出力のペア（入力画像，出力振動）を生成する．<br>
-振動に関しては，512点の加速度情報をFFT（フーリエ変換）したものを用いる．
+このステップでは，学習モデルの入力と出力のペア（入力画像，出力振動）を生成．<br>
+振動に関しては，512点の加速度情報をFFT（フーリエ変換）したものを利用．
 
 `scripts/csv_saver.py`でrosbagを起動することで，時間と加速度の情報を`csv/acc.csv`に保存
 ``` 
@@ -50,7 +52,11 @@ sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック
 
 ## 学習
 
-jupyter notebookで編集して学習
+jupyter notebookで編集して学習．
+必要なものをインストール．<br>
+```
+pip install tensorflow
+```
 ``` 
   jupyter notebook jupyter/Learning/111320-1Channel_3LatentVariables_training_for_0.8.ipynb 
 ```
