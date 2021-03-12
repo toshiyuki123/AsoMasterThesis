@@ -90,8 +90,7 @@ Save images from csv under `data/img` and spectrograms under `data/spec` by rosb
 必要なものをインストール．<br>
 そして，jupyter notebookで編集して学習．<br>
 
-Install what you need.
-Learning by editing with jupyter notebook.
+Install what you need, and learn by editing with jupyter notebook.
 ```
 pip install tensorflow
 ```
