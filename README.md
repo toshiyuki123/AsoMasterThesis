@@ -19,7 +19,7 @@
   python scripts/restore_model_color_training_0.8.py
 ```
 このとき，このように表示される．
-
+<image src="pictures/display_test.png" width=70%>
 
 
 ## データ収集
