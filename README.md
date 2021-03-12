@@ -57,6 +57,12 @@ By driving the car, we acquire the front road image and acceleration data.
 sample.bagにおいて，前方画像は`/camera/color/image_raw`のトピック，加速度は`/camera/accel/sample`のトピックである．<br>
 これを用いて以下の3ステップ（データ前処理，学習，テスト）を説明する．
 
+Download `sample.bag`, a rosbag of running data, from [here](https://drive.google.com/file/d/1lz41GKLA7QK_-HqEfRZSUWDEu1NEkdab/view?usp=sharing).<br>
+In the `sample.bag`, the forward image is the topic of `/camera/color/image_raw` and the acceleration is the topic of `/camera/accel/sample`.<br>
+The following three steps (data preprocessing, training, and testing) are described using this.<br>
+
+
+
 ## データ前処理（Data preprocessing）
 
 このステップでは，学習モデルの入力と出力のペア（入力画像，出力振動）を生成．<br>
